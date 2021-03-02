@@ -25,4 +25,4 @@ The model is trained with randomized augmented data. The augmentation transforma
 
 This model, defined as `SingleCharacterClassifier` in `model.py` and saved as `scc.model`, consists of three convolutional layers, one max pooling layer, and three fully connected layers.
 
-The current version has an accuracy of 98.32% and was trained for 30 epochs, with each epoch consisting of 100 augmented replications of the dataset.
+The current version has an accuracy of 98.32% and was trained for 30 epochs, with each epoch consisting of 100 augmented replications of the dataset. In practice, the model performs well on screenshots, but very poorly in photographs.
