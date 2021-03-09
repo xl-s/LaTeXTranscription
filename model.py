@@ -32,9 +32,10 @@ class SingleCharacterClassifier(nn.Module):
 			x = layer(x)
 		return x
 
-	def predict(self, loc):
+	def predict(self, loc, is_image=False):
+		self.eval()
 		device = "cuda" if next(self.parameters()).is_cuda else "cpu"
-		img = Image.open(loc)
+		img = Image.open(loc) if is_image else loc
 		img_t = clean_transform(img).to(device)
 		out = self.forward(torch.unsqueeze(img_t, 0))
 		return nn.functional.softmax(out, dim=1)[0]
